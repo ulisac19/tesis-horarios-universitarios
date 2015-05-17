@@ -3,7 +3,7 @@
     <head>
         <?php $vista = Route::currentRouteName(); ?>
         <?php $cadena = ""; ?>
-        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "verTabu"){ ?>
+        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "disponibilidadProfesores"){ ?>
         <?php $cadena = "../"; ?>
         <?php } ?>
         
@@ -12,6 +12,7 @@
         <script src="{{$cadena}}uikit/js/jquery.js"></script>
         <script src="{{$cadena}}uikit/js/uikit.min.js"></script>
         <script src="{{$cadena}}uikit/js/components/autocomplete.js"></script>
+
         @yield('head')
     </head>
     <body>

@@ -230,13 +230,30 @@ class HomeController extends Controller {
 		return view('HomeController.cargarData' , array('id'=>$id));
 	}
 
-	public function disponibilidadProfesores()
+	public function disponibilidadProfesores($id)
 	{
-		$cursor = Profesor::All();
+		$cursor = Profesor::find($id);
 		return view('HomeController.disponibilidadProfesores' ,array(
 									'cursor'=>$cursor
 					));
 	}
 
-	
+	public function getEventosData($profesor)
+	{
+		return view('HomeController.getEventosData', array('profesor'=>$profesor));
+	}
+
+	public function setEventosData($start, $end, $profesor)
+	{
+		return view('HomeController.setEventosData');
+	}
+
+	public function updateEventosData($start, $end, $id, $profesor)
+	{
+		return view('HomeController.updateEventosData');
+	}
+	public function deleteEventoData($id, $profesor)
+	{
+		return view('HomeController.deleteEventoData');
+	}
 }

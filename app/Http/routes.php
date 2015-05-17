@@ -58,9 +58,34 @@ Route::any('grupoMaterias', array('as' => 'grupoMaterias', 'uses' => 'HomeContro
 
 Route::get('disponibilidadProfesores', 'HomeController@disponibilidadProfesores', function()
 {
-	return view('parametros.disponibilidadProfesores');
+	return view('HomeController.disponibilidadProfesores');
 });
-Route::any('disponibilidadProfesores', array('as' => 'disponibilidadProfesores', 'uses' => 'HomeController@disponibilidadProfesores'));
+Route::any('/disponibilidadProfesores/{id}', array('as' => 'disponibilidadProfesores', 'uses' => 'HomeController@disponibilidadProfesores'));
+
+
+Route::get('getEventosData', 'HomeController@getEventosData', function()
+{
+	return view('HomeController.getEventosData');
+});
+Route::any('getEventosData/{profesor}', array('as' => 'getEventosData', 'uses' => 'HomeController@getEventosData'));
+
+Route::get('setEventosData', 'HomeController@setEventosData', function()
+{
+	return view('HomeController.setEventosData');
+});
+Route::any('/setEventosData/{start}/{end}/{profesor}', array('as' => 'setEventosData', 'uses' => 'HomeController@setEventosData', ));
+
+Route::get('updateEventosData', 'HomeController@updateEventosData', function()
+{
+	return view('HomeController.updateEventosData');
+});
+Route::any('/updateEventosData/{start}/{end}/{id}/{profesor}', array('as' => 'updateEventosData', 'uses' => 'HomeController@updateEventosData', ));
+
+Route::get('deleteEventoData', 'HomeController@deleteEventoData', function()
+{
+	return view('HomeController.deleteEventoData');
+});
+Route::any('/deleteEventoData/{id}/{profesor}', array('as' => 'deleteEventoData', 'uses' => 'HomeController@deleteEventoData', ));
 
 
 Route::get('cargarData', 'HomeController@cargarData', function()

@@ -5,7 +5,6 @@
 @section('head')
 <title>Lista de Profesores</title>
 @stop
-
 @section('content')
 
 <div class="uk-grid" data-uk-grid-margin>
@@ -39,7 +38,7 @@
           <td>{{ $seccion->materia->nombre }} - Seccion {{ $seccion->numero }}</td>
           <td>{{ $seccion->materia->codigo }}</td>
           @if ($i == 0)
-            <td rowspan="<?= $cant_materias ?>"><button class="uk-button uk-button-primary"><i class="uk-icon-eye"></i></button> <button class="uk-button uk-button-success"><i class="uk-icon-pencil"></i></button> <button class="uk-button uk-button-danger" onclick="UIkit.modal.confirm('¿esta seguro?', function(){ UIkit.modal.alert('Quicksilver :('); });"><i class="uk-icon-trash"></i></button></td>
+            <td rowspan="<?= $cant_materias ?>"><button class="uk-button uk-button-primary"><i class="uk-icon-eye"></i></button> <button class="uk-button uk-button-success"><i class="uk-icon-pencil"></i></button> <button class="uk-button uk-button-danger" onclick="UIkit.modal.confirm('¿esta seguro?', function(){ UIkit.modal.alert('Quicksilver :('); });"><i class="uk-icon-trash"></i></button> <a class="uk-button uk-button" href="{{ URL::to('disponibilidadProfesores').'/'.$prof->id }}"><i class="uk-icon-calendar-o"></i></a></td>
           @endif
         </tr>
         <?php $i++; ?>
@@ -65,7 +64,6 @@
 <li class="uk-active"><a href="#"><i class="uk-icon-bars"></i> Lista Profesores</a></li>                                
 <li class="uk-nav-header">Operaciones</li>
 <li><a href="{{URL::to('cargarMateriasProfesor')}}"><i class="uk-icon-plus"></i> Profesores</a></li>
-<li><a href="{{URL::to('disponibilidadProfesores')}}"><i class="uk-icon-calendar-o"></i> Horarios profesores</a></li>
 <li class="uk-nav-divider"></li>
 <li><a data-uk-modal="{target:'#modalListaMateriasProfesores'}" href="#"><i class="uk-icon-question-circle"></i> Ayuda</a></li>
 @stop

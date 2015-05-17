@@ -118,7 +118,6 @@ $(document).ready(function() {
 <li class="uk-active"><a href="#"><i class="uk-icon-plus"></i> Profesores</a></li>                                
 <li class="uk-nav-header">Operaciones</li>
 <li><a href="{{URL::to('listaMateriasProfesor')}}"><i class="uk-icon-bars"></i> Listas Profesores</a></li>
-<li><a href="{{URL::to('disponibilidadProfesores')}}"><i class="uk-icon-calendar-o"></i> Horarios profesores</a></li>
 <li class="uk-nav-divider"></li>
 <li><a data-uk-modal="{target:'#modalCargarMateriasProfesor'}" href="#"><i class="uk-icon-question-circle"></i> Ayuda</a></li>
 @stop
