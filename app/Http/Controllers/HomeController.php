@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Materia;
 use App\Models\Seccion;
 use App\Models\Profesor;
+use App\Models\NoDisponibilidadProfesor;
 
 class HomeController extends Controller {
 
@@ -245,7 +246,13 @@ class HomeController extends Controller {
 
 	public function setEventosData($start, $end, $profesor)
 	{
-		return view('HomeController.setEventosData');
+		$newData = new NoDisponibilidadProfesor;
+		$newData->title = "No disponible";
+		$newData->start = $start;
+		$newData->end = $end;
+		$newData->profesor_id = $profesor;
+		$newData->save();
+		// return view('HomeController.setEventosData');
 	}
 
 	public function updateEventosData($start, $end, $id, $profesor)
