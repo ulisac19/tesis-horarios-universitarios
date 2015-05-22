@@ -12,19 +12,23 @@
     </div>
 </div>
 <br>
-<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
-    <thead>         
+<table id="tabla" class="display uk-table-hover" cellspacing="0" width="100%">
+    <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>          
-        </tr>    
-        <tr>            
             <th>Titulo</th>
             <th>Descripcion</th>
             <th>Administrar</th>
-        </tr>                            
+        </tr>
     </thead>
+ 
+    <tfoot>
+        <tr>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Administrar</th>
+        </tr>
+    </tfoot>
+ 
     <tbody>
         @foreach ($cursor as $item)       
             <tr>
@@ -34,6 +38,7 @@
             </tr>
         @endforeach
         
+  
     </tbody>
 </table>
 <div class="uk-modal"  id="modalListaTabu">    
@@ -44,6 +49,11 @@
         <div class="uk-modal-footer"></div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#tabla').dataTable();
+});
+</script>
 @stop
 
 @section('submenu')

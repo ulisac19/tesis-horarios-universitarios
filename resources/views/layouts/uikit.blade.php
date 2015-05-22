@@ -9,13 +9,15 @@
         
         <link rel="stylesheet" href="{{$cadena}}uikit/css/uikit.min.css" />
         <link rel="stylesheet" href="{{$cadena}}uikit/css/uikit.docs.min.css" />
+        <link rel="stylesheet" href="{{$cadena}}css/jquery.dataTables.css" />
         <script src="{{$cadena}}uikit/js/jquery.js"></script>
+        <script src="{{$cadena}}js/jquery.dataTables.js"></script>
         <script src="{{$cadena}}uikit/js/uikit.min.js"></script>
         <script src="{{$cadena}}uikit/js/components/autocomplete.js"></script>
 
         @yield('head')
     </head>
-    <body>
+    <body class="tm-background">
     <!-- Menu no responsive -->
                     <?php                         
                         $administrar  = "";
@@ -151,80 +153,5 @@
         </div>
 
                 
-
-            <!-- Menu responsive -->
-            <div id="offcanvas" class="uk-offcanvas">
-                <div class="uk-offcanvas-bar">
-                    <ul class="uk-nav uk-nav-offcanvas">
-                        <li><a href="" class="uk-navbar-nav-subtitle">
-                            <i class="uk-icon-home"></i> Home
-                            <div>Pagina Inicio</div>
-                        </a></li>
-
-                        <li class="uk-parent" data-uk-dropdown>
-                            <a href="" class="uk-navbar-nav-subtitle"><i class="uk-icon-cog"></i> Administrar
-                             <div>Parametros del Sistema</div>
-                            <div class="uk-dropdown uk-dropdown-navbar">
-                                <ul class="uk-nav uk-nav-navbar">
-                                    <li><a href="#">Diccionario de Datos </a></li>
-                                    <li class="uk-nav-header">Materias</li>
-                                    <li><a href="#">Cargar Materias</a></li>
-                                    <li><a href="#">Cargar materias a profesores</a></li>
-                                    <li><a href="#">Materias de grupo</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li class="uk-nav-header">Base datos inicial</li>
-                                    <li><a href="#">Carreras</a></li>
-                                    <li><a href="#">Profesores</a></li>
-                                    <li><a href="#">Salones</a></li>
-                                </ul>
-                            </div>
-                         </a></li>
-
-                         <li class="uk-parent" data-uk-dropdown>
-                            <a href="" class="uk-navbar-nav-subtitle"><i class="uk-icon-calculator"></i> Parametros Algoritmos
-                             <div>Restricciones del Modelo</div>
-                            <div class="uk-dropdown uk-dropdown-navbar">
-                                <ul class="uk-nav uk-nav-navbar">
-                                    <li><a href="#">Fijar parametros</a></li>
-                                    <li class="uk-nav-header">Genetico</li>
-                                    <li><a href="#">Fijar parametros</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li class="uk-nav-header">Busqueda Tabu</li>
-                                    <li><a href="#">Fijar parametros</a></li>
-
-                                </ul>
-                            </div>
-                         </a></li>
-
-                         <li class="uk-parent" data-uk-dropdown>
-                            <a href="" class="uk-navbar-nav-subtitle"><i class="uk-icon-calendar"></i> Horarios
-                             <div>Consultar Horarios</div>
-                            <div class="uk-dropdown uk-dropdown-navbar">
-                                <ul class="uk-nav uk-nav-navbar">
-                                    <li><a href="#">Consultar</a></li>
-                                    <li><a href="#">Ejecutar Algoritmo</a></li>
-
-                                </ul>
-                            </div>
-                         </a></li>
-
-                        <li><a href="" class="uk-navbar-nav-subtitle">
-                            <i class="uk-icon-question-circle"></i> Ayuda
-                            <div>Manual sistema</div>
-                        </a></li>
-
-                        <li><a href="" class="uk-navbar-nav-subtitle">
-                            <i class="uk-icon-sign-in"></i> Login
-                            <div>Iniciar Sesion</div>
-                        </a></li>
-
-                        <li><a href="" class="uk-navbar-nav-subtitle">
-                            <i class="uk-icon-sign-out"></i> Logout
-                            <div>Cerrar Sesion</div>
-                        </a></li>
-                    </ul>                    
-                </div>
-            </div>
-            <!-- Menu responsive [Fin] -->
     </body>
 </html>

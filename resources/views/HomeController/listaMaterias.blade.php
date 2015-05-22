@@ -15,7 +15,8 @@
     </div>
 </div>
 <br>
-<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+
+<table id="tabla" class="display uk-table-hover" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>Materia</th>
@@ -25,8 +26,21 @@
             <th>Semestre</th>
             <th>Laboratorio</th>
             <th>Administrar</th>
-        </tr>                            
+        </tr>  
     </thead>
+ 
+    <tfoot>
+        <tr>
+            <th>Materia</th>
+            <th>Seccion</th>
+            <th>Codigo</th>
+            <th>U.C.</th>
+            <th>Semestre</th>
+            <th>Laboratorio</th>
+            <th>Administrar</th>
+        </tr>  
+    </tfoot>
+ 
     <tbody>
         @foreach ($cursor as $item)   
         <tr>
@@ -38,9 +52,16 @@
             <td>{{ Tipomateria::getNombre($item->materia->requiere_laboratorio) }}</td>
             <td><button class="uk-button uk-button-primary"><i class="uk-icon-eye"></i></button> <button class="uk-button uk-button-success"><i class="uk-icon-pencil"></i></button> <button class="uk-button uk-button-danger" onclick="UIkit.modal.confirm('¿esta seguro?', function(){ location.href='{{URL::route('eliminarListaSeccion',array('id'=>$item->id))}}';});"><i class="uk-icon-trash"></i></button></td>
         </tr>
-        @endforeach
+        @endforeach     
+  
     </tbody>
 </table>
+<script>
+$(document).ready(function() {
+    $('#tabla').dataTable();
+});
+</script>
+@stop
 <div class="uk-modal"  id="modalListaMaterias">    
     <div class="uk-modal-dialog">
         <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
@@ -49,7 +70,6 @@
         <div class="uk-modal-footer"></div>
     </div>
 </div>
-@stop
 
 @section('submenu')
 <li class="uk-active"><a href="#"><i class="uk-icon-bars"></i> Lista de materias</a></li>                                                              
