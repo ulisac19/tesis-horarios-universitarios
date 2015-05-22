@@ -3,7 +3,7 @@
     <head>
         <?php $vista = Route::currentRouteName(); ?>
         <?php $cadena = ""; ?>
-        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "disponibilidadProfesores"){ ?>
+        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "disponibilidadProfesores" || $vista == "verTabu"){ ?>
         <?php $cadena = "../"; ?>
         <?php } ?>
         
