@@ -15,6 +15,7 @@
     </div>
 </div>
 <br>
+
 <div id='calendar'></div>
 <script>
 $(document).ready(function() {
@@ -24,8 +25,8 @@ $(document).ready(function() {
         eventClick: function(event)
         {
             $.ajax({
-                url: '{{URL::to("deleteEventoData")}}'+'/'+event.id+'/<?= $cursor->id ?>',
-                data: {"id": event.id, "profesor":<?= $cursor->id ?>},
+                url: '{{URL::to("deleteEventoData")}}'+'/'+event.id,
+                data: {"id": event.id},
                 type: "GET",
                 success: function(json) 
                 {
@@ -99,7 +100,7 @@ $(document).ready(function() {
                  success: function(json) 
                  {
                    
-                    //$('#calendar').fullCalendar('updateEvent', event);
+                        //$('#calendar').fullCalendar('updateEvent', event);
 
                  },
                  complete: function(json) 
@@ -137,7 +138,7 @@ $(document).ready(function() {
         businessHours:
         	{
         		start: '7:00', 
-    			end: '22:00',
+    			end: '19:00',
         	},
         header: {
 			     left   : false,

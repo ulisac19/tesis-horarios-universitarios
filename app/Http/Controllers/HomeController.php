@@ -252,15 +252,23 @@ class HomeController extends Controller {
 		$newData->end = $end;
 		$newData->profesor_id = $profesor;
 		$newData->save();
-		// return view('HomeController.setEventosData');
+
+
 	}
 
 	public function updateEventosData($start, $end, $id, $profesor)
 	{
-		return view('HomeController.updateEventosData');
+		$newData = NoDisponibilidadProfesor::find($id);
+		$newData->title = "No disponible";
+		$newData->start = $start;
+		$newData->end = $end;
+		$newData->save();
+		
+		
 	}
-	public function deleteEventoData($id, $profesor)
+	public function deleteEventoData($id)
 	{
-		return view('HomeController.deleteEventoData');
+		$newData = NoDisponibilidadProfesor::find($id);	
+		$newData->delete();
 	}
 }

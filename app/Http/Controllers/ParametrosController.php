@@ -167,7 +167,7 @@ class ParametrosController extends Controller {
 
 			if(!$validator->fails())
 			{ 				
-				$nueva_config_tabu = ParametrosTabu::find($_POST["id"]);
+				$nueva_config_tabu = ParametrosTabu::find(Input::get("id"));
 				$nueva_config_tabu->nombre = Input::get('nombre');
 				$nueva_config_tabu->generacion_inicio = Input::get('generacion_inicio');
 				$nueva_config_tabu->generacion_fin = Input::get('generacion_fin');
@@ -290,7 +290,7 @@ class ParametrosController extends Controller {
 
 			if(!$validator->fails())
 			{ 				
-				$nueva_config_genetico = ParametrosGenetico::find($_POST["id"]);
+				$nueva_config_genetico = ParametrosGenetico::find(Input::get("id"));
 				$nueva_config_genetico->nombre = Input::get('nombre');
 				$nueva_config_genetico->generacion_inicio = Input::get('generacion_inicio');
 				$nueva_config_genetico->generacion_fin = Input::get('generacion_fin');

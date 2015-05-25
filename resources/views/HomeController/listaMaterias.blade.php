@@ -58,7 +58,10 @@
 </table>
 <script>
 $(document).ready(function() {
-    $('#tabla').dataTable();
+    $('#tabla').dataTable({
+      //$('.dataTables_length select').addClass('dataTables_length form-control');
+      //  $('div.dataTables_filter input').addClass('form-control');
+    });
 });
 </script>
 @stop

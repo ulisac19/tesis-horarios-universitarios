@@ -85,7 +85,7 @@ Route::get('deleteEventoData', 'HomeController@deleteEventoData', function()
 {
 	return view('HomeController.deleteEventoData');
 });
-Route::any('/deleteEventoData/{id}/{profesor}', array('as' => 'deleteEventoData', 'uses' => 'HomeController@deleteEventoData', ));
+Route::any('/deleteEventoData/{id}', array('as' => 'deleteEventoData', 'uses' => 'HomeController@deleteEventoData', ));
 
 
 Route::get('cargarData', 'HomeController@cargarData', function()
@@ -149,18 +149,44 @@ Route::get('editarGenetico', 'ParametrosController@editarGenetico', function()
 });
 Route::any('/editarGenetico/{id}', array('as' => 'editarGenetico', 'uses' => 'ParametrosController@editarGenetico'));
 
-Route::get('verGenetico', 'ParametrosController@verGenetico', function()
-{
-	return view('parametros.verGenetico');
-});
+Route::get('verGenetico', 'ParametrosController@verGenetico', function(){return view('parametros.verGenetico');});
 Route::any('/verGenetico/{id}', array('as' => 'verGenetico', 'uses' => 'ParametrosController@verGenetico'));
 
-Route::get('listaGenetico', 'ParametrosController@listaGenetico', function()
-{
-	return view('parametros.listaGenetico');
-});
+Route::get('listaGenetico', 'ParametrosController@listaGenetico', function(){return view('parametros.listaGenetico');});
 Route::any('listaGenetico', array('as' => 'listaGenetico', 'uses' => 'ParametrosController@listaGenetico'));
 
+/* ----------------------------  Profesor   ----------------------------------------- */
+Route::get('cargarProfesor', 'ProfesorController@cargarProfesor', function(){ return view('profesor.cargarProfesor');});
+Route::any('cargarProfesor', array('as' => 'cargarProfesor', 'uses' => 'ProfesorController@cargarProfesor'));
+
+Route::get('listaProfesores', 'ProfesorController@listaProfesores', function(){ return view('profesor.listaProfesores');});
+Route::any('listaProfesores', array('as' => 'listaProfesores', 'uses' => 'ProfesorController@listaProfesores'));
+
+Route::get('eliminarProfesor', 'ProfesorController@eliminarProfesor', function(){});
+Route::any('/eliminarProfesor/{id}', array('as' => 'eliminarProfesor', 'uses' => 'ProfesorController@eliminarProfesor'));
+
+Route::get('editarProfesor', 'ProfesorController@editarProfesor', function(){return view('editarProfesor');});
+Route::any('/editarProfesor/{id}', array('as' => 'editarProfesor', 'uses' => 'ProfesorController@editarProfesor'));
+
+Route::get('verProfesor', 'ProfesorController@verProfesor', function(){return view('verProfesor');});
+Route::any('/verProfesor/{id}', array('as' => 'verProfesor', 'uses' => 'ProfesorController@verProfesor'));
+
+
+/* ----------------------------  Salones   ----------------------------------------- */
+Route::get('cargarSalon', 'SalonController@cargarSalon', function(){ return view('salon.cargarSalon');});
+Route::any('cargarSalon', array('as' => 'cargarSalon', 'uses' => 'SalonController@cargarSalon'));
+
+Route::get('listaSalones', 'SalonController@listaSalones', function(){ return view('salon.listaSalones');});
+Route::any('listaSalones', array('as' => 'listaSalones', 'uses' => 'SalonController@listaSalones'));
+
+Route::get('eliminarSalon', 'SalonController@eliminarSalon', function(){});
+Route::any('/eliminarSalon/{id}', array('as' => 'eliminarSalon', 'uses' => 'SalonController@eliminarSalon'));
+
+Route::get('editarSalon', 'SalonController@editarSalon', function(){return view('salon.editarSalon');});
+Route::any('/editarSalon/{id}', array('as' => 'editarSalon', 'uses' => 'SalonController@editarSalon'));
+
+Route::get('verSalon', 'SalonController@verSalon', function(){return view('salon.verSalon');});
+Route::any('/verSalon/{id}', array('as' => 'verSalon', 'uses' => 'SalonController@verSalon'));
 
 
 

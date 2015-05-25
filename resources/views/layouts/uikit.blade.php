@@ -3,7 +3,7 @@
     <head>
         <?php $vista = Route::currentRouteName(); ?>
         <?php $cadena = ""; ?>
-        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "disponibilidadProfesores" || $vista == "verTabu"){ ?>
+        <?php if($vista == "verGenetico" || $vista == "editarGenetico" || $vista == "editarTabu" || $vista == "disponibilidadProfesores" || $vista == "verTabu" || $vista == "editarProfesor"  || $vista == "verProfesor" || $vista == "verSalon" || $vista == "editarSalon"){ ?>
         <?php $cadena = "../"; ?>
         <?php } ?>
         
@@ -24,7 +24,7 @@
                         $parametros = "";
                         
                         /* primer menu */
-                        if($vista == "listaMaterias" || $vista == "cargarMateria" || $vista == "grupoMaterias" || $vista == "listaMateriasProfesor" || $vista == "cargarMateriasProfesor"|| $vista == "disponibilidadProfesores")
+                        if($vista == "listaMaterias" || $vista == "cargarMateria" || $vista == "grupoMaterias" || $vista == "listaMateriasProfesor" || $vista == "cargarMateriasProfesor"|| $vista == "disponibilidadProfesores" || $vista == "cargarProfesor" || $vista == "verProfesor" || $vista == "editarProfesor" || $vista == "listaProfesores" || $vista == "cargarSalon" || $vista == "verSalon" || $vista == "editarSalon" || $vista == "listaSalones" )
                         {
                             $administrar = "uk-active";
                             $parametros = "";
@@ -56,10 +56,8 @@
                                 <li><a href="{{URL::to('listaMateriasProfesor')}}">Profesores</a></li>
                                 <li class="uk-nav-divider"></li>
                                 <li class="uk-nav-header">Base datos inicial</li>
-                                <li><a href="#">Departamentos</a></li>
-                                <li><a href="#">Profesores</a></li>
-                                <li><a href="#">Salones</a></li>
-                                <li><a href="#">Carreras</a></li>
+                                <li><a href="{{URL::to('listaProfesores')}}">Profesores</a></li>
+                                <li><a href="{{URL::to('listaSalones')}}">Salones</a></li>
                             </ul>
                         </div>
                      </a></li>

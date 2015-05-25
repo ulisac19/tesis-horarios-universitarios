@@ -15,8 +15,7 @@ class Profesor extends Model
 							'cedula', 
 							'departamento_id',  
 							);
-
-	public function departamento()
+    public function departamento()
     {
         return $this->belongsTo('App\Models\Departamento');
     }
